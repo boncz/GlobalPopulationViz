@@ -1,0 +1,340 @@
+/* General Page Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Title Styling */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: #555;
+}
+
+/* Section Styles */
+section {
+    width: 95%;
+    max-width: 1600px;
+    margin-bottom: 50px;
+}
+
+/* Chart Container */
+#chart, #map {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+/* Tooltip Styling */
+.tooltip {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 16px !important; /* Increase font size by 2pt from 12px to 14px */
+    pointer-events: none;
+    opacity: 0;
+}
+
+
+/* Slider Container */
+#slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Range Slider */
+.range-slider {
+    position: relative;
+    width: 50%;
+    margin: 20px auto;
+    height: 40px;
+}
+
+.range-slider input[type="range"] {
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #ddd;
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+.range-slider input[type="range"]::-webkit-slider-thumb {
+    position: relative;
+    z-index: 1;
+    width: 10px;
+    height: 30px;
+    background: #444;
+    border-radius: 2px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    pointer-events: auto;
+    transform: translateY(-50%);
+
+}
+
+.range-slider input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 30px;
+    background: #444;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+/* Slider Bar */
+.range-slider input[type="range"]::-webkit-slider-runnable-track {
+    background: #ddd;
+    height: 8px;
+    border-radius: 5px;
+}
+
+.range-slider input[type="range"]::-moz-range-track {
+    background: #ddd;
+    height: 8px;
+    border-radius: 5px;
+}
+
+/* Slider Value Display */
+.rangeValues {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#play-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#play-button:hover {
+    background-color: #555;
+}
+
+#animation-progress-container {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    margin-top: 10px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#animation-progress {
+    height: 100%;
+    width: 0;
+    background-color: #476e6e;
+    transition: width 1s linear;
+}
+
+/* General Map Layout */
+#map-container {
+    position: relative;
+    width: 100%;
+}
+
+/* Dropdown (Top Left) */
+#map-controls {
+    position: absolute;
+    top: 100px; /* Distance from the top of the map */
+    left: 20%; 
+    transform: translateX(-50%); 
+    z-index: 9; /* Ensure it stays on top of the map */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Year Display (Top Right) */
+#current-year-display {
+    position: absolute;
+    top: 100px;
+    right: 300px;
+    z-index: 10; /* Ensure it stays on top of the map */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Slider Container (Bottom Center) */
+#slider-container {
+    position: absolute;
+    bottom: 95px;
+    left: 25%;
+    transform: translateX(-50%);
+    z-index: 10; /* Ensure it stays on top of the map */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: auto;
+    max-width: 90%; /* Prevent it from being too wide */
+}
+
+/* Slider Title */
+#slider-title {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Range Slider */
+.range-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Adds space between sliders */
+}
+
+.range-slider input[type="range"] {
+    appearance: none;
+    width: 150px;
+    height: 5px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.range-slider input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 10px; /* Thin width */
+    height: 30px; /* Tall height */
+    background: #476e6e; /* Handle color */
+    border-radius: 2px; /* Slightly rounded edges */
+    cursor: pointer;
+}
+
+.range-slider input[type="range"]::-moz-range-thumb {
+    width: 10px; /* Thin width */
+    height: 30px; /* Tall height */
+    background: #476e6e; /* Handle color */
+    border-radius: 2px; /* Slightly rounded edges */
+    cursor: pointer;
+}
+
+
+/* Play Button */
+#play-button {
+    margin-top: 10px;
+    padding: 5px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #476e6e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#play-button:hover {
+    background-color: #2f4f4f;
+}
+
+.legend-group text {
+    font-size: 10px;
+    fill: #333;
+    z-index: 10;
+}
+
+.legend-group rect {
+    stroke: #ccc;
+    stroke-width: 0.75px;
+    z-index: 10;
+}
+
+#map-title {
+    position: absolute;
+    top: 50px; /* Adjust distance from the top of the page */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Align the center of the title */
+    z-index: 10; /* Ensure it stays on top of the map */
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold; /* Make it bold */
+    color: #333; /* Adjust text color */
+    text-align: center;
+}
+
+/* Add spacing between sections */
+.section {
+    margin-bottom: 50px; /* Space between sections */
+}
+
+/* Style for descriptions */
+.description {
+    font-size: 16px; /* Larger, readable text */
+    line-height: 1.6; /* Improve readability */
+    color: #444; /* Neutral dark gray */
+    max-width: 90%; /* Restrict width for readability */
+    margin: 20px auto; /* Center align and space above/below */
+    text-align: justify; /* Align text neatly */
+    padding: 10px; /* Add padding for spacing */
+    border-left: 4px solid #43a2ca; /* Accent border on the left */
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Style for footer container */
+.footer-container {
+    text-align: center; /* Center the button */
+    margin-top: 20px; /* Space above the button */
+    margin-bottom: 40px; /* Space below the button */
+}
+
+/* Style for the link button */
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #476e6e; /* Match the color scheme */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-link:hover {
+    background-color: #2f4f4f; /* Darker on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+

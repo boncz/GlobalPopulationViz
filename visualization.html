@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Population Visualizations</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script> <!-- Link to D3.js -->
+    <link rel="stylesheet" href="style.css"> <!-- Link the CSS file -->
+</head>
+<body>
+
+    <!-- Section for Choropleth -->
+    <section id="choropleth" class="section">        
+        <!-- Controls and Year Display -->
+        <div id="map-container">
+            <h1 id="map-title">How Has Population Density Changed Over Time?</h1>
+            <div id="controls-container">
+                <!-- Year Dropdown -->
+                <div id="map-controls">
+                    <label for="year-select">Select Year: </label>
+                    <select id="year-select"></select>
+                </div>
+
+                <!-- Current Year Display -->
+                <div id="current-year-display" style="text-align: center; font-size: 24px; font-weight: bold; margin-bottom: 10px;">
+                    2023
+                </div>
+
+                <!-- Slider and Play Button -->
+                <div id="slider-container">
+                    <h3 id="slider-title">Choose Range of Years: 1950 - 2023</h3>
+                    <div class="range-slider">
+                        <input type="range" min="1950" max="2023" value="1950">
+                        <input type="range" min="1950" max="2023" value="2023">
+                    </div>
+                    <button id="play-button">Play</button>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div id="map"></div>
+        </div>
+        <!-- Description -->
+         <br></br>
+        <p class="description">
+            The choropleth map above depicts global population distribution. Use the interactive controls to explore specific years, animate changes over time, or adjust a range of years to uncover historical trends. The color gradient reflects population density, with darker shades indicating higher concentrations.        </p>
+    </section>
+    <br>
+
+    <!-- Section for Area/Line Chart -->
+    <section id="area-chart" class="section">
+        <div id="chart"></div>
+        <!-- Description -->
+        <p class="description">
+            This area chart illustrates global population trends from 1950 to 2023, with projections extending to 2050. The shaded area highlights population growth over time, while the line traces the annual growth rate. Interactive tooltips provide detailed data for individual years.        </p>
+    </section>
+
+    <!-- Link to Process Documentation -->
+    <footer>
+        <div class="footer-container">
+            <a href="process.html" class="button-link">Learn About the Process</a>
+        </div>
+    </footer>
+
+    <!-- Link the JavaScript file -->
+    <script src="area_chart.js"></script>
+    <script src="choropleth.js"></script>
+
+    <!-- Add dynamic padding adjustment script -->
+    <script>
+        function adjustPadding() {
+            const chart = document.getElementById('chart');
+            const screenWidth = window.innerWidth;
+
+            // Adjust padding dynamically based on screen width
+            if (screenWidth > 1200) {
+                chart.style.paddingLeft = '35px';
+            } else if (screenWidth > 768) {
+                chart.style.paddingLeft = '20px';
+            } else {
+                chart.style.paddingLeft = '10px';
+            }
+        }
+
+        // Run the function on page load
+        adjustPadding();
+
+        // Update padding on window resize
+        window.addEventListener('resize', adjustPadding);
+    </script>
+</body>
+</html>

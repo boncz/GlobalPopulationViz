@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Growing World: Visualization and Process Documentation</title>
+    <link rel="stylesheet" href="style.css"> <!-- External CSS File -->
+    <body style="font-family: Arial, sans-serif; line-height: 1.6; margin: 0 auto; padding: 15px; max-width: 1400px; background-color: #f9f9f9;">
+
+</head>
+<body>
+    <h1>Our Growing World: Visualization and Project Process Documentation</h1>
+    <h3>Author: Ailene Johnston</h3>
+
+    <div class="section">
+        <h2>Design Process</h2>
+        <h3>Inspiration</h3>
+        <p>
+            This project initially aimed to explore global renewable energy production. However, due to the complexity of cleaning and organizing related datasets, I shifted focus to world population data. Population numbers are straightforward, mathematically manageable, and globally available, making them an ideal subject to gain proficiency with D3.js. This dataset serves as a foundation for future analyses of renewable energy and emissions trends.
+        </p>
+
+        <h3>Initial Designs and Sketches</h3>
+<p>
+    Early in the design process, I created numerous rough sketches to explore ideas and determine how best to visualize the data. These sketches helped shape the final designs by allowing me to experiment with layout, interactivity, and aesthetic choices. Below are two examples of these drafts:
+</p>
+<div style="display: flex; gap: 20px; justify-content: center; align-items: flex-end; margin-bottom: 20px;">
+    <div>
+        <img src="sketch1.jpg"style="width: 500px; border: 1px solid #ccc;">
+        <p style="text-align: center; font-size: 14px;">Rough sketch of the choropleth map, focusing on layout and color scale ideas.</p>
+    </div>
+    <div>
+        <img src="sketch2.jpg" style="width: 500px; border: 1px solid #ccc;">
+        <p style="text-align: center; font-size: 14px;">Initial concept for the area chart, experimenting with axes and density representation.</p>
+    </div>
+</div>
+<p>
+    These sketches served as a blueprint for the project and provided clarity as I transitioned to coding and refining the visualizations in D3.js.
+</p>
+
+    </div>
+
+    <div class="section">
+        <h2>Rationale for Design Choices</h2>
+        <h3>Visual Types</h3>
+        <ul>
+            <li><strong>Choropleth Map:</strong> Presented first to explore regional population distribution patterns. It highlights population density and growth visually, helping users identify significant trends geographically.</li>
+            <li><strong>Area Chart:</strong> Positioned second to provide a broader, global perspective on population trends over time, combining historical and projected data.</li>
+        </ul>
+        
+        <h3>Color Palette</h3>
+        <p>
+            The choropleth initially used a grayscale gradient, but subtle changes were difficult to discern. Bins with more divergent colors were introduced to make changes more noticeable, especially during animation. The area chart retained a neutral palette for simplicity and focus on trends.
+        </p>
+
+        <h3>Interactive Elements</h3>
+        <ul>
+            <li><strong>Choropleth Map:</strong> Features a year dropdown and a slider for smooth animation, enabling users to observe changes dynamically. Tooltips provide additional details for each country.</li>
+            <li><strong>Area Chart:</strong> Includes tooltips for specific values and a hover line for precise year identification.</li>
+        </ul>
+
+        <h3>Layout</h3>
+        <p>
+            The choropleth map is displayed first as the primary exploration tool, leading naturally to the area chart, which provides context and projects future growth trends.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Insights and Findings</h2>
+        <h3>Key Observations</h3>
+        <ul>
+            <li><strong>Population Density:</strong> The choropleth reveals that regions like India and China dominate population density and growth. Many areas remain stable or experience minimal changes.</li>
+            <li><strong>Growth Rate Trends:</strong> The area chart shows a steady decline in global growth rates, even as total population continues to rise due to compounding effects.</li>
+            <li><strong>Historical Events:</strong> A sharp drop in growth between 1958 and 1960 corresponds to global events like famine in China.</li>
+        </ul>
+
+        <h3>Conclusions</h3>
+        <p>
+            Despite declining growth rates, population numbers are rising at alarming rates. Managing these increases will require addressing resource demands and environmental impacts. The visualizations provide a foundation for further analysis into related issues, such as emissions and renewable energy needs.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Data Sources</h2>
+        <p>The following datasets were used to gather the necessary information for the visualizations:</p>
+        <ul>
+            <li><a href="https://www.kaggle.com/datasets/maheshmani13/world-population-growth" target="_blank">World Population Growth Dataset</a></li>
+            <li><a href="https://www.kaggle.com/datasets/chandanchoudhury/world-population-dataset?select=world_population_by_year_1950_2023.csv" target="_blank">World Population by Year 1950–2023 Dataset</a></li>
+        </ul>
+    </div>
+
+    <div class="section video-placeholder">
+        <h2>Walk-Through Video</h2>
+        <video controls width="100%">
+            <source src="PopulationTrendsVisualization.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p>Explore the features and insights from the global population visualization through this interactive walk-through.</p>
+    </div>
+    
+
+    <div class="section">
+        <a href="visualization.html" class="button-link">View Visualizations</a>
+    </div>
+</body>
+</html>
