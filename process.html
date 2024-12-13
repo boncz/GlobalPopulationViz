@@ -41,34 +41,41 @@
         <h2>Rationale for Design Choices</h2>
         <h3>Visual Types</h3>
         <ul>
-            <li><strong>Choropleth Map:</strong> Presented first to explore regional population distribution patterns. It highlights population density and growth visually, helping users identify significant trends geographically.</li>
-            <li><strong>Area Chart:</strong> Positioned second to provide a broader, global perspective on population trends over time, combining historical and projected data.</li>
+            <li><strong>Choropleth World Map:</strong> A natural choice for geographic data. It highlights population density and growth visually by country, helping users identify significant trends geographically.</li>
+            <li><strong>Area Chart:</strong> The area chart was chosen to best show changes in population numbers over time - filled to give a sense of weight and density. Additionally, I wanted the filled part to contrast with the second line indicating the growth rate. This line also shows changes over time, and have a separate y-axis.</li>
         </ul>
         
         <h3>Color Palette</h3>
         <p>
-            The choropleth initially used a grayscale gradient, but subtle changes were difficult to discern. Bins with more divergent colors were introduced to make changes more noticeable, especially during animation. The area chart retained a neutral palette for simplicity and focus on trends.
+            The choropleth initially used a grayscale gradient, but subtle changes were difficult to discern. Bins with more divergent colors were introduced to make changes more noticeable, especially during animation. The colors for these bins were chosen to not evoke positive or negative emotion, so I avoided colors like red or yellow that might signal alarm. The area chart retained a neutral palette for simplicity and focus on trends. The gray-blue rate line was chosen for visibility, neutrality, and coordination with the choropleth map.
         </p>
 
         <h3>Interactive Elements</h3>
         <ul>
-            <li><strong>Choropleth Map:</strong> Features a year dropdown and a slider for smooth animation, enabling users to observe changes dynamically. Tooltips provide additional details for each country.</li>
+            <li><strong>Choropleth Map:</strong> Features a year dropdown and a slider for smooth animation, enabling users to observe changes dynamically. Tooltips provide additional details for each country- some of which came directly from the data and others needed to be calculated using js.</li>
             <li><strong>Area Chart:</strong> Includes tooltips for specific values and a hover line for precise year identification.</li>
         </ul>
 
         <h3>Layout</h3>
         <p>
-            The choropleth map is displayed first as the primary exploration tool, leading naturally to the area chart, which provides context and projects future growth trends.
+            The choropleth map's feature placement went through a long process of trial and error. Though I initially planned to have the lengend at the top right, I later found that to be a better placement to display the current year. Placing the legend at the bottom allowed it to still be immediately visible. I chose to anchor all of the map components so that they remain in the same place while the map is being manipulated- this way the user can't lose sight of what year they're in. 
         </p>
     </div>
 
     <div class="section">
         <h2>Insights and Findings</h2>
+        <h3>Initial Questions To Guide The Project</h3>
+        <ul>
+            <li>What areas in the world have the densest population?</li>
+            <li>How is population growth changing over time? By country, and globally?</li>
+            <li>Is the population growth rate decreasing overall, or just in some regions?</li>
+            <li>What might the future world population look like, given current rates and trends?</li>
+        </ul>
         <h3>Key Observations</h3>
         <ul>
-            <li><strong>Population Density:</strong> The choropleth reveals that regions like India and China dominate population density and growth. Many areas remain stable or experience minimal changes.</li>
+            <li><strong>Population Density:</strong> The choropleth reveals that regions like India and China dominate population density and growth. Surprisingly, most areas remain stable or experience minimal changes, comparatively.</li>
             <li><strong>Growth Rate Trends:</strong> The area chart shows a steady decline in global growth rates, even as total population continues to rise due to compounding effects.</li>
-            <li><strong>Historical Events:</strong> A sharp drop in growth between 1958 and 1960 corresponds to global events like famine in China.</li>
+            <li><strong>Historical Events:</strong> A sharp drop in growth between 1958 and 1960 corresponds to global events like famine in China, where we can clearly see the sharp increase in rate and population due to the 1960's "baby boom".</li>
         </ul>
 
         <h3>Conclusions</h3>
